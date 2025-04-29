@@ -1,0 +1,86 @@
+/* Custom Styles for Dashboard */
+body {
+    background-color: #f8f9fa;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Navbar Styling */
+.navbar {
+    background-color: #02383C;
+}
+
+.navbar a.navbar-brand {
+    color: #ffffff;
+    font-size: 1.5rem;
+}
+
+.navbar a.navbar-brand:hover {
+    color: #C70D3A;
+}
+
+/* Sidebar above content */
+.views-list {
+    background-color: #ffffff;
+    border: 1px solid white;
+    /* Red border */
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.views-list h5 {
+    color: #C70D3A;
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+}
+
+/* Result Panel */
+.result-panel {
+    background-color: #ffffff;
+    border: 1px solid white;
+    /* Red */
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Result Heading */
+.result-panel h3 {
+    color: #C70D3A;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+/* Table Styling */
+.result-panel .table {
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+}
+
+.result-panel .table th,
+.result-panel .table td {
+    padding: 12px;
+    text-align: center;
+}
+
+.result-panel .table thead {
+    background-color: #343a40;
+    color: #ffffff;
+}
+
+.result-panel .table-striped tbody tr:nth-of-type(odd) {
+    background-color: #f2f2f2;
+}
+
+.result-panel .table-hover tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+.result-panel .table-bordered,
+.result-panel .table-bordered th,
+.result-panel .table-bordered td {
+    border: 1px solid white;
+}

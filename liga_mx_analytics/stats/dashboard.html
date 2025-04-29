@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard – Liga MX Analytics{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+
+    <!-- Top: 4-column grid of view links -->
+    <div class="views-list mb-4">
+        <h5 class="text-center mb-3" style="color: #02383C;">Stats</h5>
+        <div class="row row-cols-4 g-2">
+            {% for real_name, display_name in view_names %}
+            <div class="col">
+                <a href="?view={{ real_name }}" class="d-block text-center rounded-3 shadow-sm mb-2 py-2" style="
+              background-color: #02383C;
+              color: #ffffff;
+              border: 1px solid white;
+              font-weight: bold;
+              transition: background-color 0.3s, transform 0.3s;
+            " onmouseover="this.style.backgroundColor='#218838'; this.style.transform='scale(1.05)';"
+                    onmouseout="this.style.backgroundColor='#A1C398'; this.style.transform='scale(1);'">
+                    {{ display_name }}
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- Below: Results Panel -->
+    <div class="result-panel">
+        {% if view_data %}
+        <h3 class="mb-4" style="color: #02383C;">{{ view_data.name }}</h3>
+        <div class="table-responsive">
+            <table class="table table-striped table-hover table-bordered rounded">
+                <thead class="table-dark">
+                    <tr>
+                        {% for col in view_data.columns %}
+                        <th>{{ col }}</th>
+                        {% endfor %}
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in view_data.rows %}
+                    <tr>
+                        {% for cell in row %}
+                        <td>{{ cell }}</td>
+                        {% endfor %}
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% else %}
+        <p class="text-muted">Select a statistic above to see its data.</p>
+        {% endif %}
+    </div>
+
+</div>
+{% endblock %}
